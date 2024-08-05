@@ -9,7 +9,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
   .setTitle('Blog Pessoal')
   .setDescription('Projeto blog pessoal')
-  .setContact('Fernando Cassio', 'https://github.com/fernandoCassiodev', 'fernandocassiodev@gmail.com')
+  .setContact('Fernando Cassio', 'https://github.com/fernandocassiodev', 'fernandocassiodev@gmail.com')
   .setVersion('1.0')
   .addBearerAuth()
   .build();
@@ -23,6 +23,6 @@ async function bootstrap() {
 
   app.enableCors(); //habilitamos requisições de outras origens
 
-  await app.listen(4000);
+  await app.listen(process.env.PORT || 4000);
 }
 bootstrap();
